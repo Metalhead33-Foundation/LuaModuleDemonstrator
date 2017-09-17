@@ -11,6 +11,13 @@ LibraryHandler::LibraryHandler()
 {
 
 }
+LibraryHandler::~LibraryHandler()
+{
+	for(LibraryIterator it = libraries.begin(); it != libraries.end();++it)
+	{
+		remove(it->temporary_path.c_str());
+	}
+}
 void LibraryHandler::prepareLibraries()
 {
 	PhysFs::FileHandle::StringList libs = PhysFs::FileHandle::EnumerateFiles("/modules/unix");

@@ -17,6 +17,7 @@ public:
 	typedef LibraryVector::iterator LibraryIterator;
 	LibraryVector libraries;
 	LibraryHandler();
+	~LibraryHandler();
 	void prepareLibraries();
 	void processLibraries();
 };
